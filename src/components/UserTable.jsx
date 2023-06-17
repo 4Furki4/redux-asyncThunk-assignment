@@ -3,7 +3,7 @@ import React from 'react'
 export default function UserTable({ users }) {
     return (
         <div style={{ scrollbarColor: "#dddd" }} className='w-11/12 overflow-x-auto '>
-            <table className='w-11/12 '>
+            <table className='w-full'>
                 <thead >
                     <tr >
                         <th>Id</th>
