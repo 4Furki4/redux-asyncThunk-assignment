@@ -5,11 +5,8 @@ import { ClipLoader } from 'react-spinners'
 import UserTable from './UserTable'
 
 const overrideStyle = {
-    position: 'absolute',
-    top: '50%',
-    left: '50%',
-    transform: 'translate(-50%, -50%)',
-    inset: 0,
+    // center it
+    display: 'block',
     margin: 'auto',
 }
 
@@ -33,9 +30,6 @@ export default function () {
     )
     if (usersStatus === 'failed') return <div>{usersError}</div>
     return (
-        <div className='flex flex-col justify-center items-center'>
-            <h1>Users</h1>
-            <UserTable users={users} />
-        </div>
+        <UserTable users={users} />
     )
 }

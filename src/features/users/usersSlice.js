@@ -10,7 +10,7 @@ export const fetchUsers = createAsyncThunk('users/fetchUsers', async () => {
 const initialState = {
     users: [],
     status: 'idle', // 'idle' | 'loading' | 'succeeded' | 'failed'
-    error: null
+    error: null,
 }
 
 const usersSlice = createSlice({
@@ -45,6 +45,7 @@ const usersSlice = createSlice({
 export const selectAllUsers = state => state.users.users
 export const getUsersStatus = state => state.users.status
 export const getUsersError = state => state.users.error
+export const getUserCount = state => state.users.users.length
 export const { setUsers, addUser, removeUser, updateUser } = usersSlice.actions
 
 export default usersSlice.reducer

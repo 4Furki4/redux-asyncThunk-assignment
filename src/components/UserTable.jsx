@@ -8,7 +8,7 @@ export default function UserTable({ users }) {
         dispatch(removeUser(id))
     }
     return (
-        <div style={{ scrollbarColor: "#dddd" }} className='w-11/12 overflow-x-auto '>
+        <div className='w-11/12 mx-auto overflow-x-auto '>
             <table className='w-full'>
                 <thead >
                     <tr >
@@ -20,12 +20,12 @@ export default function UserTable({ users }) {
                 </thead>
                 <tbody>
                     {users?.map(user => (
-                        <tr className='border-4 border-collapse border-t-gray-700' key={user.id}>
-                            <td className='text-center border-y-4 border-collapse border-t-gray-700'>{user.id}</td>
-                            <td className='text-center border-y-4 border-collapse border-t-gray-700'>{user.name}</td>
-                            <td className='text-center border-y-4 border-collapse border-t-gray-700'>{user.email}</td>
-                            <td className='text-center border-y-4 border-collapse border-t-gray-700'>{user.phone}</td>
-                            <FaTrashAlt className='relative top-1 cursor-pointer fill-red-700' onClick={() => handleDelete(user.id)} />
+                        <tr className='border-y-2 border-b-0 border-collapse text-sky-200' key={user.id}>
+                            <td className='text-center border-collapse '>{user.id}</td>
+                            <td className='text-center border-collapse '>{user.name}</td>
+                            <td className='text-center border-collapse '>{user.email}</td>
+                            <td className='text-center border-collapse '>{user.phone}</td>
+                            <td><FaTrashAlt className='fill-red-700 cursor-pointer transition-transform hover:scale-150' onClick={() => handleDelete(user.id)} /></td>
                         </tr>
                     ))}
                 </tbody>
