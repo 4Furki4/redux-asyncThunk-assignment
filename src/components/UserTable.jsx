@@ -9,27 +9,29 @@ export default function UserTable({ users }) {
     }
     return (
         <div className='w-11/12 mx-auto overflow-x-auto '>
-            <table className='w-full'>
-                <thead >
-                    <tr >
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {users?.map(user => (
-                        <tr className='border-y-2 border-b-0 border-collapse text-sky-200' key={user.id}>
-                            <td className='text-center border-collapse '>{user.id}</td>
-                            <td className='text-center border-collapse '>{user.name}</td>
-                            <td className='text-center border-collapse '>{user.email}</td>
-                            <td className='text-center border-collapse '>{user.phone}</td>
-                            <td><FaTrashAlt className='fill-red-700 cursor-pointer transition-transform hover:scale-150' onClick={() => handleDelete(user.id)} /></td>
+            {users.length === 0 ? <h1 className='text-center text-2xl font-bold text-gray-700'>Looks Like You Don't Have Users</h1> :
+                <table className='w-full'>
+                    <thead >
+                        <tr >
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {users?.map(user => (
+                            <tr className='border-y-2 border-b-0 border-collapse text-sky-200' key={user.id}>
+                                <td className='text-center border-collapse '>{user.id}</td>
+                                <td className='text-center border-collapse '>{user.name}</td>
+                                <td className='text-center border-collapse '>{user.email}</td>
+                                <td className='text-center border-collapse '>{user.phone}</td>
+                                <td><FaTrashAlt className='fill-red-700 cursor-pointer transition-transform hover:scale-150' onClick={() => handleDelete(user.id)} /></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            }
         </div>
     )
 }
