@@ -7,10 +7,10 @@ function App() {
 
 
   return (
-    <>
+    <div className=' min-h-screen relative'>
       <ListUser />
       <AddUser />
-    </>
+    </div>
   )
 }
 
