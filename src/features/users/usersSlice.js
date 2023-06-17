@@ -22,6 +22,10 @@ const usersSlice = createSlice({
         },
         addUser(state, action) {
             state.users.push(action.payload)
+        },
+        removeUser(state, action) {
+            const index = state.users.findIndex(user => user.id === action.payload)
+            state.users.splice(index, 1)
         }
     },
     extraReducers(builder) {
